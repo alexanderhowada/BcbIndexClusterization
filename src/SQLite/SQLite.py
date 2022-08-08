@@ -20,6 +20,9 @@ class SQLite:
 	def __init__(self, db_name):
 		self.db_name = db_name
 
+	def get_connection(self):
+		return sqlite3.connect(self.db_name)
+
 	def __call__(self, query):
 		"""
 		Execute and commit query
